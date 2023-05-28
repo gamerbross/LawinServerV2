@@ -275,10 +275,6 @@ async function registerUser(discordId, username, email, plainPassword) {
     // filters
     const emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!emailFilter.test(email)) return { message: "You did not provide a valid email address!", status: 400 };
-    if (username.length >= 25) return { message: "Your username must be less than 25 characters long.", status: 400 };
-    if (username.length < 3) return { message: "Your username must be atleast 3 characters long.", status: 400 };
-    if (plainPassword.length >= 128) return { message: "Your password must be less than 128 characters long.", status: 400 };
-    if (plainPassword.length < 8) return { message: "Your password must be atleast 8 characters long.", status: 400 };
 
     const allowedCharacters = (" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~").split("");
     
